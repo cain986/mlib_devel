@@ -151,6 +151,38 @@ pins:
          # bank 128   # bank 129
     loc: [AC42, AB40, W42, U42]
 
+# 10 GbE
+  mgt_tx_p:
+    loc:
+      - V38  # SFP0_TX_P  Bank 128 - MGTYTXP0_128
+      - U36  # SFP1_TX_P  Bank 128 - MGTYTXP1_128
+      - P38  # SFP2_TX_P  Bank 129 - MGTYTXP0_129
+      - N36  # SFP3_TX_P  Bank 129 - MGTYTXP1_129
+  mgt_tx_n:
+    loc:
+      - V39  # SFP0_TX_N  Bank 128 - MGTYTXN0_128
+      - U37  # SFP1_TX_N  Bank 128 - MGTYTXN1_128
+      - P39  # SFP2_TX_N  Bank 129 - MGTYTXN0_129
+      - N37  # SFP3_TX_N  Bank 129 - MGTYTXN1_129
+  mgt_rx_p:
+    loc:
+      - AC41  # SFP0_RX_P  Bank 128 - MGTYRXP0_128
+      - AB39  # SFP1_RX_P  Bank 128 - MGTYRXP1_128
+      - W41   # SFP2_RX_P  Bank 129 - MGTYRXP0_129
+      - U41   # SFP3_RX_P  Bank 129 - MGTYRXP1_129
+  mgt_rx_n:
+    loc:
+      - AC42  # SFP0_RX_N  Bank 128 - MGTYRXN0_128
+      - AB40  # SFP1_RX_N  Bank 128 - MGTYRXN1_128
+      - W42   # SFP2_RX_N  Bank 129 - MGTYRXN0_129
+      - U42   # SFP3_RX_N  Bank 129 - MGTYRXN1_129
+  eth_clk_p:
+    loc:
+      - H34
+  eth_clk_n:
+    loc:
+      - H35
+
 # zcu216 has 8 RGB LEDs (24 total) however, not all of the LEDs of the same
 # color have the same voltage standard. Not sure how the tools can handle this
 # if at all (probably just named custom io group)
