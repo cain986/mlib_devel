@@ -178,10 +178,10 @@ pins:
       - U42   # SFP3_RX_N  Bank 129 - MGTYRXN1_129
   eth_clk_p:
     loc:
-      - H34
+      - Y34
   eth_clk_n:
     loc:
-      - H35
+      - Y35
 
 # zcu216 has 8 RGB LEDs (24 total) however, not all of the LEDs of the same
 # color have the same voltage standard. Not sure how the tools can handle this
