@@ -53,6 +53,8 @@
 module tengbaser_infrastructure_ultrascale (
      input gt_refclk_p,
      input gt_refclk_n,
+     input dclkin_refclk_p,
+     input dclkin_refclk_n,
      input  [0:0] qpll0reset,
      output [0:0] qpll0lock,
      output [0:0] qpll0outclk,
@@ -60,10 +62,17 @@ module tengbaser_infrastructure_ultrascale (
      input  [0:0] qpll1reset,
      output [0:0] qpll1lock,
      output [0:0] qpll1outclk,
-     output [0:0] qpll1outrefclk
+     output [0:0] qpll1outrefclk,
+     input  [0:0] dclkreset,
+     output [0:0] dclkoutclk,
 );
 
 wire refclk;
+wire dclkin_refclk;
+
+// Setup dclk from differential inputs
+IBUFDS i_dclk (.I(dclkin_refclk_p), .IB(dclkin_refclk_n), .O(dclkin_refclk));
+BUFGCE ibuf_dclk (.CE(1'b1), .I(dclkin_refclk), .O(dclkoutclk))
 
 xxv_ethernet_1_clocking_wrapper i_xxv_ethernet_1_clocking_wrapper(
     .gt_refclk_p (gt_refclk_p),
